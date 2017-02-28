@@ -9,5 +9,6 @@
 		}else{
 			echo 'Redis error...';
 		}
+		$redis->delete('test');
 	}
 ?>
