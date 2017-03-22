@@ -1,0 +1,31 @@
+git下载 FFmpegit
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg
+./configure --enable-shared --disable-asm
+make
+make install
+git 下载 X264 （因为mp4直接crop格式可能播放不了，需要转为H264格式）
+最终的代码为：ffmpeg -i 21361954214.mp4  -vcodec libx264  -filter:v "crop=480:480:130:130" out5.mp4
+git clone http://git.videolan.org/git/x264.git
+
+./configure --enable-shared --disable-asm
+make
+make install
+
+重新装一下ffmpeg
+ ./configure --enable-shared --disable-yasm --enable-libx264  --enable-gpl  --prefix=/usr/local/ffmpeg
+ (没有斜杠 没有斜杠 没有斜杠)
+ make
+ make install
+安装成功后
+ ffmpeg version N-84156-g23f3f92 Copyright (c) 2000-2017 the FFmpeg developers
+  built with gcc 4.8.5 (GCC) 20150623 (Red Hat 4.8.5-11)
+  configuration: --enable-shared --disable-yasm --enable-libx264 --enable-gpl --prefix=/usr/local/
+  libavutil      55. 48.100 / 55. 48.100
+  libavcodec     57. 83.100 / 57. 83.100
+  libavformat    57. 66.104 / 57. 66.104
+  libavdevice    57.  3.100 / 57.  3.100
+  libavfilter     6. 77.100 /  6. 77.100
+  libswscale      4.  3.101 /  4.  3.101
+  libswresample   2.  4.100 /  2.  4.100
+  libpostproc    54.  2.100 / 54.  2.100
+
