@@ -29,3 +29,9 @@ make install
   libswresample   2.  4.100 /  2.  4.100
   libpostproc    54.  2.100 / 54.  2.100
 
+添加环境变量
+vi /etc/ld.so.conf
+/usr/local/ffmpeg/lib 
+
+重载配置
+ldconfig
